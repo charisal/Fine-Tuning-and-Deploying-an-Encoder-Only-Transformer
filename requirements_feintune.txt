@@ -1,0 +1,16 @@
+transformers==5.1.0
+peft==0.18.1
+accelerate==1.12.0
+datasets==4.5.0
+evaluate==0.4.6
+sentencepiece==0.2.1
+protobuf==6.33.5
+scikit-learn==1.7.2
+tokenizers==0.22.2
+huggingface_hub==1.4.1
+safetensors==0.7.0
+typing_extensions==4.15.0
+scipy==1.15.3
+pandas==2.3.3
+tqdm==4.67.3
+urllib3==2.6.3

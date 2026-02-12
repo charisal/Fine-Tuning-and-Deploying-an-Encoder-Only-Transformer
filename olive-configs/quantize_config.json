@@ -1,0 +1,34 @@
+{
+    "input_model": {
+        "type": "ONNXModel",
+        "model_path": "models/4_optimized/model.onnx"
+    },
+    "systems": {
+        "local_system": {
+            "type": "LocalSystem",
+            "config": {
+                "accelerators": [
+                    {
+                        "device": "cpu",
+                        "execution_providers": ["CPUExecutionProvider"]
+                    }
+                ]
+            }
+        }
+    },
+    "passes": {
+
+        "quantize": {
+            "type": "OnnxDynamicQuantization",
+            "config": {
+                "per_channel": true,
+                "reduce_range": true,
+                "nodes_to_exclude": ["classifier"]
+            }
+        }
+    },
+    "engine": {
+        "target": "local_system",
+        "output_dir": "models/5_quantized"
+    }
+}

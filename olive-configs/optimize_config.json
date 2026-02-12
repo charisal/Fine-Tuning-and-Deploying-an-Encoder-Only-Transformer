@@ -1,0 +1,18 @@
+{
+    "input_model": {
+        "type": "ONNXModel",
+        "model_path": "models/3_converted_onnx/model.onnx"
+    },
+    "passes": {
+        "optimize": {
+            "type": "OrtTransformersOptimization",
+            "config": {
+                "model_type": "bert",
+                "opt_level": 2
+            }
+        }
+    },
+    "engine": {
+        "output_dir": "models/4_optimized"
+    }
+}
